@@ -1,0 +1,92 @@
+<meta charset="UTF-8">
+
+ <HTML>
+
+    <script type="text/javascript">
+            function FuncionEncriptar()
+            {
+              //  alert('Se desencriptara el texto ingresado');
+                    document.getElementById("Cand1").style.display="none";
+                    document.getElementById("Cand2").style.display="block";
+
+             //A continuacion se procederá a encriptar la cadena de texto ingresada.
+             var texto=document.querySelector("#TextArea1").value;
+
+                  
+             var textoEncriptado=texto.replace(/e/gi,"enter").replace(/i/gi,"imes").replace(/a/gi,"ai").replace(/o/gi,"ober").replace(/u/gi,"ufat");
+          
+
+
+           //  var textoEncriptado=texto.replace(/e/gi,"enter");
+             //        textoEncriptado=textoEncriptado.replace(/i/gi,"imes");
+              //       textoEncriptado=textoEncriptado.replace(/a/gi,"ai");
+              //       textoEncriptado=textoEncriptado.replace(/o/gi,"ober");
+              //       textoEncriptado=textoEncriptado.replace(/u/gi,"ufat");
+
+              document.querySelector("#TextArea1").value="";
+              document.querySelector("#TextArea2").value=textoEncriptado;
+
+
+
+            }
+            function FuncionDesencriptar()
+            {
+              //  alert('Se desencriptara el texto ingresado');
+                    document.getElementById("Cand1").style.display="block";
+                    document.getElementById("Cand2").style.display="none";
+
+                    var texto=document.querySelector("#TextArea2").value;
+                    var textoDesEncriptado=texto.replace(/ufat/gi,"u").replace(/ober/gi,"o").replace(/ai/gi,"a").replace(/imes/gi,"i").replace(/enter/gi,"e");
+
+                    document.querySelector("#TextArea1").value=textoDesEncriptado;
+                    document.querySelector("#TextArea2").value="";
+            }
+
+            function CopiarAlPortapalepes()
+            {
+                var input=document.getElementById("TextArea2");
+                input.select();
+                document.execCommand("copy");
+                
+            }
+            
+
+    </script>
+
+<head>
+    <title>♠Challengue 1-Encriptador♣</title>
+    <link rel="stylesheet" href="chellengue1.css">
+
+</head>
+
+<body>
+    <div class="div1">
+        <p class="texto">Ingrese texto aquí</p>
+       <div class="textarea"><textarea id="TextArea1" placeholder="Ingrese texto!!!!"></textarea></div>
+    </div>
+    
+
+    <div id="div2" class="div2">
+
+        <img id="Cand1" class="center" src="candado_abierto.jpg" >
+        <img id="Cand2" class="center" src="candado_cerrado.jpg" style="display:none">
+        <div id="div21" class="textarea"><textarea id="TextArea2" placeholder="Texto Resultado"></textarea></div>
+        <button type="button" onclick="CopiarAlPortapalepes()" class="center" >Copiar</button>
+    </div>
+    
+    
+
+    <div class="div3">  
+        <div>
+            <button type="button" onclick="FuncionEncriptar()">Encriptar</button>
+            <button type="button" onclick="FuncionDesencriptar()">Desencriptar</button>
+        </div>
+    </div>
+
+    
+
+
+</body>
+
+ </HTML>
+
